@@ -32,18 +32,23 @@ class App extends Component {
       .then(x => {
         let tmp = new Array();
         let estados = new Array();
+        let weather = new Array();
         estados.push({ _id: 0, name: 'Selecciona un estado...' });
         x.results.forEach(function (y) {
           tmp.push(y);
-          if (estados.some(x => x.name === y.state) === false) {
+          if(weather.some(w => w.skydescriptionlong === y.skydescriptionlong) === false){
+            weather.push({skydescriptionlong: y.skydescriptionlong});
+          }
+          console.log();
+          if (estados.some(h => h.name === y.state) === false) {
             estados.push({ name: y.state });
           }
-
         });
         this.setState({
           repo: tmp,
           states: estados
         });
+        console.log(weather);
       });
   }
 
@@ -57,7 +62,11 @@ class App extends Component {
         local.push(x);
       }
     });
-    this.setState({ localidades: local })
+    this.setState({ localidades: local });
+
+    if(this.state.localidades.length === 0){
+      alert("Selecciona una localidad.");
+    }
   }
 
   ChangeMap = (event) => {

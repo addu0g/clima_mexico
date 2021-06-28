@@ -1,12 +1,38 @@
 import { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import {CloudDrizzle, Cloud, CloudLightningRain, CloudFog, CloudSun, Sun, SunFill } from 'react-bootstrap-icons';
+
+// const climas = ['Tormentas dispersas','Tormentas','Soleado',
+//                 'Mayormente soleado','Nublado','Mayormente nublado',
+//                 'Parcialmente nublado'];
+
+function selectWeatherIcon(clima){
+    switch(clima){
+        case "Tormentas dispersas":
+            return <CloudDrizzle />;
+        case "Tormentas":
+            return <CloudLightningRain/>;
+        case "Soleado":
+            return <Sun />;
+        case "Mayormente soleado":
+            return <SunFill/>;
+        case "Nublado":
+            return <Cloud />;
+        case "Mayormente nublado":
+            return <CloudFog/>;
+        case "Parcialmente nublado":
+            return <CloudSun/>;
+
+    }
+}
+
 const Marker = props => {
     return <div className="SuperAwesomePin">
         Estado: <b>{props.state}</b>
         <br />
         Localidad: <b>{props.name}</b>
         <br />
-        Tiempo: <b>{props.weather}</b>
+        Tiempo: <b>{props.weather} {selectWeatherIcon(props.weather)}</b>
         <br />
         Tempreatura: <b>{props.tempc}°C</b>
         <br />
