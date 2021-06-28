@@ -2,17 +2,17 @@ import { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 const Marker = props => {
     return <div className="SuperAwesomePin">
-        Estado: {props.state}
+        Estado: <b>{props.state}</b>
         <br />
-        Localidad: {props.name}
+        Localidad: <b>{props.name}</b>
         <br />
-        Tiempo: {props.weather}
+        Tiempo: <b>{props.weather}</b>
         <br />
-        Tempreatura: {props.tempc}°C
+        Tempreatura: <b>{props.tempc}°C</b>
         <br />
-        Probabilidad de lluvia: {props.probabilityofprecip}%
+        Probabilidad de lluvia: <b>{props.probabilityofprecip}%</b>
         <br />
-        Dirección del viento: {props.winddirectioncardinal}</div>
+        Dirección del viento: <b>{props.winddirectioncardinal}</b></div>
 }
 
 class MapComponent extends Component {
