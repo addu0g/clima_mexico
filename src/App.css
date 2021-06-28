@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+.appTitle{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
+.mensaje{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  border-style:solid;
+  border-color:red;
+  border-width: 2px;
+}
+
+.SuperAwesomePin{
+  padding:20px;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 3px;
+  font-size:larger;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.selectElement{
+  padding:10px;
+  background-color: white;
+
+}
+.selectElement:focus{
+  
+  border-width: 3px;
+  border-style: solid;
+  box-shadow:  0 0 6px rgba(35, 173, 278, 1);;
+}
